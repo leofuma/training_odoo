@@ -42,8 +42,6 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
         },
     });
 
-
-
-    fieldRegistry.add('lfm_widget_one2many_1', Lfm_widget_one2many_1);
+    fieldRegistry.add('lfm_widget_one2many_1', LfmWidgetOne2many_1);
 });
 
