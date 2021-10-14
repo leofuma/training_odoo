@@ -2,7 +2,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
     "use strict";
     var fieldRegistry = require('web.field_registry');
     var relational_fields = require("web.relational_fields");
-    var FieldOne2Many = relational_fields.FieldOne2Many;
+    var FieldOne2Many = require('web.relational_fields').FieldOne2Many;
     var CalendarView = require("web.CalendarView");
     var GraphView = require("web.GraphView");
     var PivotView = require("web.PivotView");
@@ -14,6 +14,14 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
     };
 
    var lfm_widget_one2many_1 = FieldOne2Many.extend({
+       init: function () {
+        this._super.apply(this, arguments);
+
+        // boolean used to prevent concurrent record creation
+        this.creatingRecord = false;
+        },
+
+
         _render: function () {
             if (this.renderer || !this.view) return this._super();
             var arch = this.view.arch;

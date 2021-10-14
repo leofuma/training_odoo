@@ -12,7 +12,7 @@
                     </xpath>
                     <xpath expr="//field[@name='order_line']" position="attributes">
                          <attribute name="widget">lfm_widget_one2many_1</attribute>
-                         <attribute name="mode">kanban</attribute>
+                         <attribute name="mode">pivot</attribute>
                     </xpath>
                 </field>
         </record>
