@@ -19,7 +19,7 @@
     'version': '1.1.3',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_management'],
+    'depends': ['base', 'sale_management', 'web'],
 
     # always loaded
     'data': [

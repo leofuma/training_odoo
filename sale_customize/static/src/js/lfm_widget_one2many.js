@@ -15,7 +15,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
 
    var lfm_widget_one2many_1 = FieldOne2Many.extend({
         _render: function () {
-            if (this.init || !this.view) return this._super();
+            //if (this.renderer || !this.view) return this._super();
             var arch = this.view.arch;
             if (
                 arch.tag === "graph" ||
@@ -31,7 +31,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
                 var view = new viewClass[viewType](this.view, view_params);
                 var self = this;
                 return view.getController(this).then(function (controller) {
-                    self.init = controller.init;
+                    self.renderer = controller.renderer;
                     self.$el.addClass(
                         "o_field_x2many o_field_x2many_" + viewType
                     );
