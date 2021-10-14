@@ -11,7 +11,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
         graph: GraphView,
         pivot: PivotView,
         calendar: CalendarView,
-    };
+        };
 
    var lfm_widget_one2many_1 = FieldOne2Many.extend({
         _render: function () {
@@ -31,7 +31,9 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
                 var view = new viewClass[viewType](this.view, view_params);
                 var self = this;
                 return view.getController(this).then(function (controller) {
-                    self.renderer = controller.renderer;
+                    self.renderer = controller._getRenderer();
+                    //var Renderer = this._getRenderer();
+                    //this.renderer = new Renderer(this, this.value, rendererParams);
                     self.$el.addClass(
                         "o_field_x2many o_field_x2many_" + viewType
                     );
