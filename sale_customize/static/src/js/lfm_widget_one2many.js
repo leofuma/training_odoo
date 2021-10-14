@@ -15,7 +15,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
 
    var lfm_widget_one2many_1 = FieldOne2Many.extend({
         _render: function () {
-            //if (this.renderer || !this.view) return this._super();
+            if (this.renderer || !this.view) return this._super();
             var arch = this.view.arch;
             if (
                 arch.tag === "graph" ||
