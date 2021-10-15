@@ -32,8 +32,6 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
                 var self = this;
                 return view.getController(this).then(function (controller) {
                     self.renderer = controller._getRenderer();
-                    //var Renderer = this._getRenderer();
-                    //this.renderer = new Renderer(this, this.value, rendererParams);
                     self.$el.addClass(
                         "o_field_x2many o_field_x2many_" + viewType
                     );
