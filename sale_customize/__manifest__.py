@@ -25,7 +25,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/sale_customize.xml',
-        'views/lfm_widget.xml'
+        'views/lfm_widget.xml',
+        'views/assets.xml',
     ],
     'application': True,
     'license': 'OPL-1',

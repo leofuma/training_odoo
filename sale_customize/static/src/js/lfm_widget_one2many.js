@@ -1,6 +1,7 @@
-odoo.define('sale.lfm_widget_one2many', function (require) {
+odoo.define('sale_customize.lfm_widget_one2many', function (require) {
     "use strict";
     var fieldRegistry = require('web.field_registry');
+    var ViewRegistry = require('web.view_registry');
     var relational_fields = require("web.relational_fields");
     var FieldOne2Many = require('web.relational_fields').FieldOne2Many;
     var CalendarView = require("web.CalendarView");
@@ -13,7 +14,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
         calendar: CalendarView,
         };
 
-   var lfm_widget_one2many_1 = FieldOne2Many.extend({
+   FieldOne2Many.include({
         _render: function () {
             if (this.renderer || !this.view) return this._super();
             var arch = this.view.arch;
@@ -31,7 +32,7 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
                 var view = new viewClass[viewType](this.view, view_params);
                 var self = this;
                 return view.getController(this).then(function (controller) {
-                    self.renderer = controller._getRenderer();
+                    self.renderer = controller.renderer;
                     self.$el.addClass(
                         "o_field_x2many o_field_x2many_" + viewType
                     );
@@ -41,7 +42,5 @@ odoo.define('sale.lfm_widget_one2many', function (require) {
             } else return this._super();
         },
     });
-
-    fieldRegistry.add('lfm_widget_one2many_1', LfmWidgetOne2many_1);
 });
 

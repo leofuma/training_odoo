@@ -11,8 +11,8 @@
                     <xpath expr="//field[@name='order_line']//tree/control/create[@name='add_note_control']" position="replace">
                     </xpath>
                     <xpath expr="//field[@name='order_line']" position="attributes">
-                         <attribute name="widget">lfm_widget_one2many_1</attribute>
-                         <attribute name="mode">pivot</attribute>
+                         <attribute name="widget">field_one2many</attribute>
+                         <attribute name="mode">graph</attribute>
                     </xpath>
                 </field>
         </record>
